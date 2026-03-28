@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="1200" height="580" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <!-- Color scale: dark (0) → green (10) -->
+    <linearGradient id="heatScale" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#161B22"/>
+      <stop offset="50%"  stop-color="#007A54"/>
+      <stop offset="100%" stop-color="#00E5A0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="580" fill="#0D1117"/>
+  <rect x="10" y="10" width="1180" height="560" rx="12" fill="#161B22" stroke="#30363D"/>
+
+  <!-- Title -->
+  <text x="600" y="48" text-anchor="middle" fill="#E6EDF3" font-size="19" font-weight="700">Backend Capability Matrix — Higher is Better (0–10)</text>
+
+  <!-- Column headers (criteria) -->
+  <!-- 7 criteria, columns starting at x=220, width~130 each -->
+  <text x="253" y="85" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="600">Accuracy</text>
+  <text x="383" y="85" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="600">Latency</text>
+  <text x="513" y="85" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="600">Token Cost</text>
+  <text x="643" y="78" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="600">Staleness</text>
+  <text x="643" y="92" text-anchor="middle" fill="#8B949E" font-size="11">Awareness</text>
+  <text x="773" y="85" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="600">Scalability</text>
+  <text x="903" y="78" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="600">Setup</text>
+  <text x="903" y="92" text-anchor="middle" fill="#8B949E" font-size="11">Ease</text>
+  <text x="1033" y="78" text-anchor="middle" fill="#8B949E" font-size="12" font-weight="600">Cloud</text>
+  <text x="1033" y="92" text-anchor="middle" fill="#8B949E" font-size="11">Native</text>
+
+  <!-- Row headers (backends) -->
+  <text x="155" y="163" text-anchor="end" fill="#7B61FF" font-size="13" font-weight="700">ChromaDB</text>
+  <text x="155" y="253" text-anchor="end" fill="#00C2FF" font-size="13" font-weight="700">FAISS</text>
+  <text x="155" y="343" text-anchor="end" fill="#00E5A0" font-size="13" font-weight="700">SQLite</text>
+  <text x="155" y="433" text-anchor="end" fill="#FF9500" font-size="13" font-weight="700">Mem0</text>
+
+  <!-- Helper macro: cell(x,y,val,color) -->
+  <!-- Row 1: ChromaDB: [7.1, 6.5, 9.0, 7.0, 8.0, 8.5, 3.0] -->
+  <!-- Cell colors based on value: 0–4=dark, 4–7=medium, 7–10=bright green -->
+
+  <!-- ChromaDB row -->
+  <!-- Accuracy 7.1 → moderate green -->
+  <rect x="188" y="118" width="130" height="80" rx="4" fill="#004D38" stroke="#30363D" stroke-width="1"/>
+  <text x="253" y="162" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">7.1</text>
+  <!-- Latency 6.5 → moderate -->
+  <rect x="318" y="118" width="130" height="80" rx="4" fill="#003D2E" stroke="#30363D" stroke-width="1"/>
+  <text x="383" y="162" text-anchor="middle" fill="#00C2A0" font-size="20" font-weight="700">6.5</text>
+  <!-- Token Cost 9.0 → bright -->
+  <rect x="448" y="118" width="130" height="80" rx="4" fill="#006644" stroke="#30363D" stroke-width="1"/>
+  <text x="513" y="162" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">9.0</text>
+  <!-- Staleness 7.0 → moderate -->
+  <rect x="578" y="118" width="130" height="80" rx="4" fill="#004D38" stroke="#30363D" stroke-width="1"/>
+  <text x="643" y="162" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">7.0</text>
+  <!-- Scalability 8.0 → good -->
+  <rect x="708" y="118" width="130" height="80" rx="4" fill="#005940" stroke="#30363D" stroke-width="1"/>
+  <text x="773" y="162" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">8.0</text>
+  <!-- Setup 8.5 → good -->
+  <rect x="838" y="118" width="130" height="80" rx="4" fill="#005C42" stroke="#30363D" stroke-width="1"/>
+  <text x="903" y="162" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">8.5</text>
+  <!-- Cloud 3.0 → low -->
+  <rect x="968" y="118" width="130" height="80" rx="4" fill="#1E2830" stroke="#30363D" stroke-width="1"/>
+  <text x="1033" y="162" text-anchor="middle" fill="#8B949E" font-size="20" font-weight="700">3.0</text>
+
+  <!-- FAISS row -->
+  <!-- Accuracy 6.8 -->
+  <rect x="188" y="208" width="130" height="80" rx="4" fill="#003D2E" stroke="#30363D" stroke-width="1"/>
+  <text x="253" y="252" text-anchor="middle" fill="#00C2A0" font-size="20" font-weight="700">6.8</text>
+  <!-- Latency 9.5 → highest! -->
+  <rect x="318" y="208" width="130" height="80" rx="4" fill="#007052" stroke="#30363D" stroke-width="1"/>
+  <text x="383" y="252" text-anchor="middle" fill="#00FFB2" font-size="20" font-weight="800">9.5</text>
+  <!-- Token 9.0 -->
+  <rect x="448" y="208" width="130" height="80" rx="4" fill="#006644" stroke="#30363D" stroke-width="1"/>
+  <text x="513" y="252" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">9.0</text>
+  <!-- Staleness 7.0 -->
+  <rect x="578" y="208" width="130" height="80" rx="4" fill="#004D38" stroke="#30363D" stroke-width="1"/>
+  <text x="643" y="252" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">7.0</text>
+  <!-- Scalability 7.5 -->
+  <rect x="708" y="208" width="130" height="80" rx="4" fill="#005240" stroke="#30363D" stroke-width="1"/>
+  <text x="773" y="252" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">7.5</text>
+  <!-- Setup 8.0 -->
+  <rect x="838" y="208" width="130" height="80" rx="4" fill="#005940" stroke="#30363D" stroke-width="1"/>
+  <text x="903" y="252" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">8.0</text>
+  <!-- Cloud 3.0 -->
+  <rect x="968" y="208" width="130" height="80" rx="4" fill="#1E2830" stroke="#30363D" stroke-width="1"/>
+  <text x="1033" y="252" text-anchor="middle" fill="#8B949E" font-size="20" font-weight="700">3.0</text>
+
+  <!-- SQLite row -->
+  <!-- Accuracy 7.4 -->
+  <rect x="188" y="298" width="130" height="80" rx="4" fill="#005240" stroke="#00E5A0" stroke-width="2"/>
+  <text x="253" y="342" text-anchor="middle" fill="#00FFB2" font-size="20" font-weight="800">7.4</text>
+  <!-- Latency 8.5 -->
+  <rect x="318" y="298" width="130" height="80" rx="4" fill="#005C42" stroke="#30363D" stroke-width="1"/>
+  <text x="383" y="342" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">8.5</text>
+  <!-- Token 9.0 -->
+  <rect x="448" y="298" width="130" height="80" rx="4" fill="#006644" stroke="#30363D" stroke-width="1"/>
+  <text x="513" y="342" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">9.0</text>
+  <!-- Staleness 7.0 -->
+  <rect x="578" y="298" width="130" height="80" rx="4" fill="#004D38" stroke="#30363D" stroke-width="1"/>
+  <text x="643" y="342" text-anchor="middle" fill="#00E5A0" font-size="20" font-weight="700">7.0</text>
+  <!-- Scalability 6.0 -->
+  <rect x="708" y="298" width="130" height="80" rx="4" fill="#003020" stroke="#30363D" stroke-width="1"/>
+  <text x="773" y="342" text-anchor="middle" fill="#00A070" font-size="20" font-weight="700">6.0</text>
+  <!-- Setup 9.5 → highest! -->
+  <rect x="838" y="298" width="130" height="80" rx="4" fill="#007052" stroke="#30363D" stroke-width="1"/>
+  <text x="903" y="342" text-anchor="middle" fill="#00FFB2" font-size="20" font-weight="800">9.5</text>
+  <!-- Cloud 4.0 -->
+  <rect x="968" y="298" width="130" height="80" rx="4" fill="#222A30" stroke="#30363D" stroke-width="1"/>
+  <text x="1033" y="342" text-anchor="middle" fill="#8B949E" font-size="20" font-weight="700">4.0</text>
+
+  <!-- Mem0 row -->
+  <!-- Accuracy 6.3 -->
+  <rect x="188" y="388" width="130" height="80" rx="4" fill="#362000" stroke="#30363D" stroke-width="1"/>
+  <text x="253" y="432" text-anchor="middle" fill="#FF9500" font-size="20" font-weight="700">6.3</text>
+  <!-- Latency 2.0 → cloud round-trip! -->
+  <rect x="318" y="388" width="130" height="80" rx="4" fill="#3A1A00" stroke="#30363D" stroke-width="1"/>
+  <text x="383" y="432" text-anchor="middle" fill="#FF4C4C" font-size="20" font-weight="700">2.0</text>
+  <!-- Token 6.0 -->
+  <rect x="448" y="388" width="130" height="80" rx="4" fill="#342000" stroke="#30363D" stroke-width="1"/>
+  <text x="513" y="432" text-anchor="middle" fill="#FF9500" font-size="20" font-weight="700">6.0</text>
+  <!-- Staleness 8.5 → best! -->
+  <rect x="578" y="388" width="130" height="80" rx="4" fill="#3D2800" stroke="#30363D" stroke-width="1"/>
+  <text x="643" y="432" text-anchor="middle" fill="#FFB040" font-size="20" font-weight="700">8.5</text>
+  <!-- Scalability 9.5 → best! -->
+  <rect x="708" y="388" width="130" height="80" rx="4" fill="#402E00" stroke="#30363D" stroke-width="1"/>
+  <text x="773" y="432" text-anchor="middle" fill="#FFD060" font-size="20" font-weight="800">9.5</text>
+  <!-- Setup 7.0 -->
+  <rect x="838" y="388" width="130" height="80" rx="4" fill="#382400" stroke="#30363D" stroke-width="1"/>
+  <text x="903" y="432" text-anchor="middle" fill="#FF9500" font-size="20" font-weight="700">7.0</text>
+  <!-- Cloud 9.5 → best! -->
+  <rect x="968" y="388" width="130" height="80" rx="4" fill="#402E00" stroke="#30363D" stroke-width="1"/>
+  <text x="1033" y="432" text-anchor="middle" fill="#FFD060" font-size="20" font-weight="800">9.5</text>
+
+  <!-- Color scale legend -->
+  <text x="400" y="508" text-anchor="middle" fill="#8B949E" font-size="12">Score scale:</text>
+  <rect x="470" y="494" width="300" height="16" rx="4" fill="url(#heatScale)" stroke="#30363D"/>
+  <text x="470" y="526" fill="#8B949E" font-size="11">0 (low)</text>
+  <text x="770" y="526" text-anchor="end" fill="#00E5A0" font-size="11">10 (best)</text>
+
+  <!-- Footer insight -->
+  <text x="600" y="555" text-anchor="middle" fill="#8B949E" font-size="12" font-style="italic">SQLite excels on accuracy + setup ease · FAISS wins on latency · Mem0 wins on cloud-native scalability</text>
+</svg>

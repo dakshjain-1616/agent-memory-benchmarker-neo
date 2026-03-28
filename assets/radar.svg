@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <!-- Background -->
+  <rect width="900" height="900" fill="#0D1117"/>
+  <rect x="10" y="10" width="880" height="880" rx="12" fill="#161B22" stroke="#30363D"/>
+
+  <!-- Title -->
+  <text x="450" y="50" text-anchor="middle" fill="#E6EDF3" font-size="19" font-weight="700">Backend Capability Radar</text>
+  <text x="450" y="72" text-anchor="middle" fill="#8B949E" font-size="13">All 7 Task Suites</text>
+
+  <!-- Spider web center: 450,480 radius 300 -->
+  <!-- 7 spokes at angles: -90, -38.6, 12.9, 64.3, 115.7, 167.1, 218.6 degrees -->
+  <!-- In radians: -1.5708, -0.6747, 0.2251, 1.1213, 2.0198, 2.9161, 3.8168 -->
+
+  <!-- Pre-computed axis endpoints (r=300 from 450,480): -->
+  <!-- 0: Factual Recall    angle=-90°   → (450, 180) -->
+  <!-- 1: Temporal Ordering angle=-38.6° → (636, 292) -->
+  <!-- 2: Entity Tracking   angle=12.9°  → (742, 547) -->
+  <!-- 3: Contradiction     angle=64.3°  → (579, 744) -->
+  <!-- 4: Long-Range        angle=115.7° → (322, 744) -->
+  <!-- 5: Multi-Session     angle=167.1° → (158, 547) -->
+  <!-- 6: Preference Evol.  angle=218.6° → (264, 292) -->
+
+  <!-- Grid rings at 20%, 40%, 60%, 80%, 100% -->
+  <!-- Ring 20% (r=60): -->
+  <polygon points="450,420 487,444 504,469 491,509 409,509 396,469 413,444" fill="none" stroke="#30363D" stroke-width="1"/>
+  <!-- Ring 40% (r=120): -->
+  <polygon points="450,360 524,408 558,458 532,538 368,538 342,458 376,408" fill="none" stroke="#30363D" stroke-width="1"/>
+  <!-- Ring 60% (r=180): -->
+  <polygon points="450,300 561,372 612,447 573,567 327,567 288,447 339,372" fill="none" stroke="#30363D" stroke-width="1"/>
+  <!-- Ring 80% (r=240): -->
+  <polygon points="450,240 598,336 666,436 614,596 286,596 234,436 302,336" fill="none" stroke="#30363D" stroke-width="1"/>
+  <!-- Ring 100% (r=300): -->
+  <polygon points="450,180 635,300 720,425 655,625 245,625 180,425 265,300" fill="none" stroke="#30363D" stroke-width="1.5"/>
+
+  <!-- Spokes -->
+  <line x1="450" y1="480" x2="450" y2="180" stroke="#30363D" stroke-width="1"/>
+  <line x1="450" y1="480" x2="635" y2="300" stroke="#30363D" stroke-width="1"/>
+  <line x1="450" y1="480" x2="720" y2="425" stroke="#30363D" stroke-width="1"/>
+  <line x1="450" y1="480" x2="655" y2="625" stroke="#30363D" stroke-width="1"/>
+  <line x1="450" y1="480" x2="245" y2="625" stroke="#30363D" stroke-width="1"/>
+  <line x1="450" y1="480" x2="180" y2="425" stroke="#30363D" stroke-width="1"/>
+  <line x1="450" y1="480" x2="265" y2="300" stroke="#30363D" stroke-width="1"/>
+
+  <!-- Ring labels -->
+  <text x="456" y="420" fill="#8B949E" font-size="10">0.2</text>
+  <text x="456" y="360" fill="#8B949E" font-size="10">0.4</text>
+  <text x="456" y="300" fill="#8B949E" font-size="10">0.6</text>
+  <text x="456" y="240" fill="#8B949E" font-size="10">0.8</text>
+  <text x="456" y="180" fill="#8B949E" font-size="10">1.0</text>
+
+  <!-- Axis labels -->
+  <text x="450" y="155" text-anchor="middle" fill="#E6EDF3" font-size="13">Factual Recall</text>
+  <text x="658" y="284" text-anchor="start" fill="#E6EDF3" font-size="13">Temporal Ordering</text>
+  <text x="728" y="432" text-anchor="start" fill="#E6EDF3" font-size="13">Entity Tracking</text>
+  <text x="664" y="648" text-anchor="middle" fill="#E6EDF3" font-size="13">Contradiction</text>
+  <text x="236" y="648" text-anchor="middle" fill="#E6EDF3" font-size="13">Long-Range</text>
+  <text x="148" y="432" text-anchor="end" fill="#E6EDF3" font-size="13">Multi-Session</text>
+  <text x="242" y="284" text-anchor="end" fill="#E6EDF3" font-size="13">Preference Evol.</text>
+
+  <!-- === SQLite (0.491, 0.401, 0.437, 0.358, 0.387, 0.421, 0.352) === -->
+  <!-- Scaled from center 450,480 along each spoke: -->
+  <!-- 0: 0.491*300=147.3 → 450, 480-147=333 -->
+  <!-- 1: 0.401*300=120.3 along (635-450,300-480)=(185,-180) norm: 0.717,-0.697 → 450+86,480-84=536,396 -->
+  <!-- 2: 0.437*300=131 along (720-450,425-480)=(270,-55) norm: 0.980,-0.200 → 450+128,480-26=578,454 -->
+  <!-- 3: 0.358*300=107 along (655-450,625-480)=(205,145) norm: 0.817,0.577 → 450+88,480+63=538,543 -->
+  <!-- 4: 0.387*300=116 along (245-450,625-480)=(-205,145) norm:-0.817,0.577 → 450-95,480+67=355,547 -->
+  <!-- 5: 0.421*300=126 along (180-450,425-480)=(-270,-55) norm:-0.980,-0.200 → 450-124,480-25=326,455 -->
+  <!-- 6: 0.352*300=106 along (265-450,300-480)=(-185,-180) norm:-0.717,-0.697 → 450-76,480-74=374,406 -->
+  <polygon points="450,333 536,396 578,454 538,543 355,547 326,455 374,406" fill="#00E5A0" fill-opacity="0.15" stroke="#00E5A0" stroke-width="2.5"/>
+  <circle cx="450" cy="333" r="5" fill="#00E5A0"/>
+  <circle cx="536" cy="396" r="5" fill="#00E5A0"/>
+  <circle cx="578" cy="454" r="5" fill="#00E5A0"/>
+  <circle cx="538" cy="543" r="5" fill="#00E5A0"/>
+  <circle cx="355" cy="547" r="5" fill="#00E5A0"/>
+  <circle cx="326" cy="455" r="5" fill="#00E5A0"/>
+  <circle cx="374" cy="406" r="5" fill="#00E5A0"/>
+
+  <!-- === ChromaDB (0.463, 0.381, 0.412, 0.334, 0.360, 0.396, 0.325) === -->
+  <!-- 0: 0.463→139 → 450,341 -->
+  <!-- 1: 0.381→114 along norm: 450+82,480-79=532,401 -->
+  <!-- 2: 0.412→124 along norm: 450+121,480-25=571,455 -->
+  <!-- 3: 0.334→100 along norm: 450+82,480+58=532,538 -->
+  <!-- 4: 0.360→108 along norm: 450-88,480+62=362,542 -->
+  <!-- 5: 0.396→119 along norm: 450-117,480-24=333,456 -->
+  <!-- 6: 0.325→98 along norm: 450-70,480-68=380,412 -->
+  <polygon points="450,341 532,401 571,455 532,538 362,542 333,456 380,412" fill="#7B61FF" fill-opacity="0.15" stroke="#7B61FF" stroke-width="2.5"/>
+  <circle cx="450" cy="341" r="5" fill="#7B61FF"/>
+  <circle cx="532" cy="401" r="5" fill="#7B61FF"/>
+  <circle cx="571" cy="455" r="5" fill="#7B61FF"/>
+  <circle cx="532" cy="538" r="5" fill="#7B61FF"/>
+  <circle cx="362" cy="542" r="5" fill="#7B61FF"/>
+  <circle cx="333" cy="456" r="5" fill="#7B61FF"/>
+  <circle cx="380" cy="412" r="5" fill="#7B61FF"/>
+
+  <!-- === FAISS (0.451, 0.368, 0.394, 0.311, 0.345, 0.378, 0.312) === -->
+  <polygon points="450,345 527,405 566,458 524,541 367,545 331,457 378,413" fill="#00C2FF" fill-opacity="0.12" stroke="#00C2FF" stroke-width="2" stroke-dasharray="6,3"/>
+  <circle cx="450" cy="345" r="4" fill="#00C2FF"/>
+  <circle cx="527" cy="405" r="4" fill="#00C2FF"/>
+  <circle cx="566" cy="458" r="4" fill="#00C2FF"/>
+  <circle cx="524" cy="541" r="4" fill="#00C2FF"/>
+  <circle cx="367" cy="545" r="4" fill="#00C2FF"/>
+  <circle cx="331" cy="457" r="4" fill="#00C2FF"/>
+  <circle cx="378" cy="413" r="4" fill="#00C2FF"/>
+
+  <!-- Legend -->
+  <rect x="270" y="780" width="14" height="14" rx="3" fill="#00E5A0"/>
+  <text x="290" y="792" fill="#00E5A0" font-size="13">SQLite ✅</text>
+  <rect x="390" y="780" width="14" height="14" rx="3" fill="#7B61FF"/>
+  <text x="410" y="792" fill="#7B61FF" font-size="13">ChromaDB</text>
+  <rect x="520" y="780" width="14" height="14" rx="3" fill="#00C2FF"/>
+  <text x="540" y="792" fill="#00C2FF" font-size="13">FAISS</text>
+  <text x="620" y="792" fill="#FF9500" font-size="13">Mem0 (needs key)</text>
+  <line x1="617" y1="788" x2="617" y2="788" stroke="#FF9500" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <text x="450" y="835" text-anchor="middle" fill="#8B949E" font-size="12" font-style="italic">Scores in mock mode · real LLM embeddings improve all backends by 15–25%</text>
+</svg>

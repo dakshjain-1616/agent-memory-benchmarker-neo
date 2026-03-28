@@ -1,38 +1,210 @@
 {
   "mode": "mock",
-  "model": "mock",
-  "elapsed_s": 1.84,
+  "model": "openai/gpt-5.4-mini",
+  "elapsed_s": 1.95,
   "results": {
-    "faiss": {
+    "chromadb": {
       "factual_recall": {
-        "accuracy": 0.463,
-        "latency_ms": 0.31,
+        "accuracy": 0.16886661992252056,
+        "latency_ms": 0.7955492806753942,
         "tokens": 0,
-        "confidence": 0.621,
-        "staleness": 0.0
+        "confidence": 0.3521979543424788,
+        "staleness": 5.350435569040357e-07
       },
       "temporal_ordering": {
-        "accuracy": 0.381,
-        "latency_ms": 0.28,
+        "accuracy": 0.09381393174380552,
+        "latency_ms": 0.862564193084836,
         "tokens": 0,
-        "confidence": 0.584,
-        "staleness": 0.0
+        "confidence": 0.3325351715087891,
+        "staleness": 6.05154768174021e-06
+      },
+      "entity_tracking": {
+        "accuracy": 0.12402619304918157,
+        "latency_ms": 0.825500018739452,
+        "tokens": 0,
+        "confidence": 0.359184383518166,
+        "staleness": 9.56339624069713e-06
+      },
+      "contradiction_detection": {
+        "accuracy": 0.02638888888888889,
+        "latency_ms": 1.0903922084253281,
+        "tokens": 0,
+        "confidence": 0.5231129800279936,
+        "staleness": 1.5616311840771502e-05
+      },
+      "long_range_dependency": {
+        "accuracy": 0.09762237762237763,
+        "latency_ms": 1.7594210027406614,
+        "tokens": 0,
+        "confidence": 0.4506995975971222,
+        "staleness": 2.514174608836406e-05
+      },
+      "multi_session": {
+        "accuracy": 0.16682619849286517,
+        "latency_ms": 1.6198728311186035,
+        "tokens": 0,
+        "confidence": 0.3710068315267563,
+        "staleness": 3.475537481933966e-05
+      },
+      "preference_evolution": {
+        "accuracy": 0.08902898550724639,
+        "latency_ms": 1.7836161889135838,
+        "tokens": 0,
+        "confidence": 0.28072460095087687,
+        "staleness": 4.317739631531925e-05
+      }
+    },
+    "faiss": {
+      "factual_recall": {
+        "accuracy": 0.16886661992252056,
+        "latency_ms": 0.3138320254428046,
+        "tokens": 0,
+        "confidence": 0.3521979515041624,
+        "staleness": 2.2113738606943656e-07
+      },
+      "temporal_ordering": {
+        "accuracy": 0.09381393174380552,
+        "latency_ms": 0.3413570113480091,
+        "tokens": 0,
+        "confidence": 0.3325351715087891,
+        "staleness": 6.091336666624869e-06
+      },
+      "entity_tracking": {
+        "accuracy": 0.12402619304918157,
+        "latency_ms": 0.34737065046404797,
+        "tokens": 0,
+        "confidence": 0.3591843876573775,
+        "staleness": 9.1401435734495e-06
+      },
+      "contradiction_detection": {
+        "accuracy": 0.02638888888888889,
+        "latency_ms": 0.28521454078145325,
+        "tokens": 0,
+        "confidence": 0.5231129725774128,
+        "staleness": 1.3854205934360486e-05
+      },
+      "long_range_dependency": {
+        "accuracy": 0.09762237762237763,
+        "latency_ms": 0.4413155062745015,
+        "tokens": 0,
+        "confidence": 0.45069960421986055,
+        "staleness": 1.5207571686159937e-05
+      },
+      "multi_session": {
+        "accuracy": 0.16682619849286517,
+        "latency_ms": 0.36841081843400997,
+        "tokens": 0,
+        "confidence": 0.37100683649381,
+        "staleness": 2.086807393242296e-05
+      },
+      "preference_evolution": {
+        "accuracy": 0.08902898550724639,
+        "latency_ms": 0.3677810076624155,
+        "tokens": 0,
+        "confidence": 0.28072459499041236,
+        "staleness": 2.5837129046135665e-05
+      }
+    },
+    "mem0": {
+      "factual_recall": {
+        "accuracy": 0.16855086016740153,
+        "latency_ms": 0.35599354721073595,
+        "tokens": 0,
+        "confidence": 0.2153260012648345,
+        "staleness": 2.4788875396808407e-09
+      },
+      "temporal_ordering": {
+        "accuracy": 0.13072038760678312,
+        "latency_ms": 0.3289594082161784,
+        "tokens": 0,
+        "confidence": 0.1697344591104292,
+        "staleness": 5.19396624509838e-06
+      },
+      "entity_tracking": {
+        "accuracy": 0.12743088366276775,
+        "latency_ms": 0.4505673423409462,
+        "tokens": 0,
+        "confidence": 0.19299078255601956,
+        "staleness": 7.414969803831717e-06
+      },
+      "contradiction_detection": {
+        "accuracy": 0.17394810555801268,
+        "latency_ms": 0.3531642723828554,
+        "tokens": 0,
+        "confidence": 0.2706823298409916,
+        "staleness": 1.1659234012473263e-05
+      },
+      "long_range_dependency": {
+        "accuracy": 0.1490656565656566,
+        "latency_ms": 0.4449853246721129,
+        "tokens": 0,
+        "confidence": 0.25841035759493886,
+        "staleness": 1.3585756281964123e-05
+      },
+      "multi_session": {
+        "accuracy": 0.17066518023039765,
+        "latency_ms": 0.412384164519608,
+        "tokens": 0,
+        "confidence": 0.22129438027548184,
+        "staleness": 1.915081403192076e-05
+      },
+      "preference_evolution": {
+        "accuracy": 0.09932502754470719,
+        "latency_ms": 0.3443475812673569,
+        "tokens": 0,
+        "confidence": 0.13818041610572068,
+        "staleness": 2.4506450796546453e-05
       }
     },
     "sqlite": {
       "factual_recall": {
-        "accuracy": 0.491,
-        "latency_ms": 0.52,
+        "accuracy": 0.1877701180806771,
+        "latency_ms": 0.23429242095776967,
         "tokens": 0,
-        "confidence": 0.643,
-        "staleness": 0.0
+        "confidence": 0.5,
+        "staleness": 4.943515247379793e-06
       },
       "temporal_ordering": {
-        "accuracy": 0.356,
-        "latency_ms": 0.47,
+        "accuracy": 0.08396837944664033,
+        "latency_ms": 0.22992936428636312,
         "tokens": 0,
-        "confidence": 0.601,
-        "staleness": 0.0
+        "confidence": 0.5,
+        "staleness": 1.5639018908997215e-05
+      },
+      "entity_tracking": {
+        "accuracy": 0.09125220458553791,
+        "latency_ms": 0.2304176256681482,
+        "tokens": 0,
+        "confidence": 0.5,
+        "staleness": 2.7045581954876496e-05
+      },
+      "contradiction_detection": {
+        "accuracy": 0.013888888888888888,
+        "latency_ms": 0.2022747357841581,
+        "tokens": 0,
+        "confidence": 0.5,
+        "staleness": 3.833397122554594e-05
+      },
+      "long_range_dependency": {
+        "accuracy": 0.07623188405797103,
+        "latency_ms": 0.23620983120054007,
+        "tokens": 0,
+        "confidence": 0.5,
+        "staleness": 4.758867780740861e-05
+      },
+      "multi_session": {
+        "accuracy": 0.17448717948717948,
+        "latency_ms": 0.23670568286130825,
+        "tokens": 0,
+        "confidence": 0.5,
+        "staleness": 6.033115159698177e-05
+      },
+      "preference_evolution": {
+        "accuracy": 0.04000000000000001,
+        "latency_ms": 0.2287495881319046,
+        "tokens": 0,
+        "confidence": 0.5,
+        "staleness": 7.153990285879708e-05
       }
     }
   }

@@ -1,24 +1,12 @@
-Agent Memory Benchmarker — Mock Run Summary
-============================================
-Mode:     mock (no API keys required)
-Profile:  quick (2 backends x 2 tasks)
-Elapsed:  1.84s
-Backends: faiss, sqlite
-Tasks:    factual_recall, temporal_ordering
-Winner:   sqlite (mean accuracy 0.424)
+Mode: mock
+Model: openai/gpt-5.4-mini
+Elapsed: 1.95s
+Backends: chromadb, faiss, mem0, sqlite
+Tasks: factual_recall, temporal_ordering, entity_tracking, contradiction_detection, long_range_dependency, multi_session, preference_evolution
+Winner: mem0 (mean accuracy 0.146)
 
 Per-backend mean accuracy:
-  sqlite: 0.424
-  faiss:  0.422
-
-Per-backend x task breakdown:
-  faiss  x factual_recall:    acc=0.463  lat=0.31ms  tokens=0  conf=0.621  staleness=0.000
-  faiss  x temporal_ordering: acc=0.381  lat=0.28ms  tokens=0  conf=0.584  staleness=0.000
-  sqlite x factual_recall:    acc=0.491  lat=0.52ms  tokens=0  conf=0.643  staleness=0.000
-  sqlite x temporal_ordering: acc=0.356  lat=0.47ms  tokens=0  conf=0.601  staleness=0.000
-
-Notes:
-  - Scores use Jaccard similarity (mock mode — no sentence-transformers loaded)
-  - Tokens = 0 because no LLM API calls are made in mock mode
-  - Staleness = 0.0 because memories are added immediately before querying
-  - Latency measured for local in-memory retrieval only
+  mem0: 0.146
+  chromadb: 0.110
+  faiss: 0.110
+  sqlite: 0.095

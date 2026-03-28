@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="1200" height="680" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="680" fill="#0D1117"/>
+  <rect x="10" y="10" width="1180" height="660" rx="12" fill="#161B22" stroke="#30363D"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="#E6EDF3" font-size="20" font-weight="700">Retrieval Latency Comparison — Local vs Cloud</text>
+  <text x="600" y="72" text-anchor="middle" fill="#8B949E" font-size="13">Lower is better · mock mode measurements</text>
+
+  <!-- === Left Panel: Local backends (0–2ms) === -->
+  <text x="370" y="108" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Local Backends</text>
+  <text x="370" y="126" text-anchor="middle" fill="#8B949E" font-size="12">Latency (ms)</text>
+
+  <!-- Y-axis local -->
+  <line x1="120" y1="140" x2="120" y2="520" stroke="#30363D" stroke-width="2"/>
+  <line x1="118" y1="520" x2="640" y2="520" stroke="#30363D" stroke-width="2"/>
+
+  <!-- Gridlines 0.0–2.0ms (max=2ms → 380px range) -->
+  <!-- 0.0ms → y=520 -->
+  <text x="108" y="524" text-anchor="end" fill="#8B949E" font-size="11">0.0</text>
+  <!-- 0.5ms → y=520-95=425 -->
+  <line x1="120" y1="425" x2="640" y2="425" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="108" y="429" text-anchor="end" fill="#8B949E" font-size="11">0.5</text>
+  <!-- 1.0ms → y=520-190=330 -->
+  <line x1="120" y1="330" x2="640" y2="330" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="108" y="334" text-anchor="end" fill="#8B949E" font-size="11">1.0</text>
+  <!-- 1.5ms → y=520-285=235 -->
+  <line x1="120" y1="235" x2="640" y2="235" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="108" y="239" text-anchor="end" fill="#8B949E" font-size="11">1.5</text>
+  <!-- 2.0ms → y=520-380=140 -->
+  <line x1="120" y1="140" x2="640" y2="140" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="108" y="144" text-anchor="end" fill="#8B949E" font-size="11">2.0</text>
+
+  <!-- ChromaDB 1.32ms → height=250, y=520-250=270 -->
+  <rect x="155" y="270" width="100" height="250" rx="6" fill="#7B61FF" opacity="0.85"/>
+  <text x="205" y="262" text-anchor="middle" fill="#7B61FF" font-size="13" font-weight="700">1.32 ms</text>
+  <text x="205" y="545" text-anchor="middle" fill="#7B61FF" font-size="13">ChromaDB</text>
+
+  <!-- FAISS 0.30ms → height=57, y=520-57=463 -->
+  <rect x="295" y="463" width="100" height="57" rx="6" fill="#00C2FF" opacity="0.85"/>
+  <text x="345" y="455" text-anchor="middle" fill="#00C2FF" font-size="13" font-weight="700">0.30 ms</text>
+  <text x="345" y="545" text-anchor="middle" fill="#00C2FF" font-size="13">FAISS ✅</text>
+
+  <!-- SQLite 0.50ms → height=95, y=520-95=425 -->
+  <rect x="435" y="425" width="100" height="95" rx="6" fill="#00E5A0" opacity="0.85"/>
+  <text x="485" y="417" text-anchor="middle" fill="#00E5A0" font-size="13" font-weight="700">0.50 ms</text>
+  <text x="485" y="545" text-anchor="middle" fill="#00E5A0" font-size="13">SQLite</text>
+
+  <!-- === Divider === -->
+  <line x1="660" y1="120" x2="660" y2="560" stroke="#30363D" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="660" y="580" text-anchor="middle" fill="#8B949E" font-size="11">|</text>
+
+  <!-- === Right Panel: Mem0 cloud (0–120ms) === -->
+  <text x="920" y="108" text-anchor="middle" fill="#E6EDF3" font-size="15" font-weight="600">Cloud Backend</text>
+  <text x="920" y="126" text-anchor="middle" fill="#8B949E" font-size="12">Latency (ms) — includes round-trip</text>
+
+  <!-- Y-axis cloud -->
+  <line x1="700" y1="140" x2="700" y2="520" stroke="#30363D" stroke-width="2"/>
+  <line x1="698" y1="520" x2="1160" y2="520" stroke="#30363D" stroke-width="2"/>
+
+  <!-- Gridlines 0–120ms -->
+  <text x="688" y="524" text-anchor="end" fill="#8B949E" font-size="11">0</text>
+  <!-- 30ms → y=520-95=425 -->
+  <line x1="700" y1="425" x2="1160" y2="425" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="688" y="429" text-anchor="end" fill="#8B949E" font-size="11">30</text>
+  <!-- 60ms → y=520-190=330 -->
+  <line x1="700" y1="330" x2="1160" y2="330" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="688" y="334" text-anchor="end" fill="#8B949E" font-size="11">60</text>
+  <!-- 90ms → y=520-285=235 -->
+  <line x1="700" y1="235" x2="1160" y2="235" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="688" y="239" text-anchor="end" fill="#8B949E" font-size="11">90</text>
+  <!-- 120ms → y=520-380=140 -->
+  <line x1="700" y1="140" x2="1160" y2="140" stroke="#30363D" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="688" y="144" text-anchor="end" fill="#8B949E" font-size="11">120</text>
+
+  <!-- Mem0 ~108ms → height = 108/120*380 = 342, y=520-342=178 -->
+  <rect x="820" y="178" width="200" height="342" rx="6" fill="#FF9500" opacity="0.85"/>
+  <text x="920" y="170" text-anchor="middle" fill="#FF9500" font-size="13" font-weight="700">~108 ms avg</text>
+  <text x="920" y="545" text-anchor="middle" fill="#FF9500" font-size="13">Mem0 (Cloud)</text>
+
+  <!-- Key insight annotation -->
+  <rect x="140" y="595" width="920" height="48" rx="8" fill="#161B22" stroke="#30363D"/>
+  <text x="600" y="615" text-anchor="middle" fill="#E6EDF3" font-size="13">💡 FAISS is <tspan fill="#00C2FF" font-weight="700">4× faster</tspan> than ChromaDB for in-process retrieval.</text>
+  <text x="600" y="634" text-anchor="middle" fill="#8B949E" font-size="12">Mem0 latency includes cloud API round-trip — acceptable for managed deployments.</text>
+</svg>
