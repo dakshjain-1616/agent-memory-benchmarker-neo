@@ -1,0 +1,39 @@
+{
+  "mode": "mock",
+  "model": "mock",
+  "elapsed_s": 1.84,
+  "results": {
+    "faiss": {
+      "factual_recall": {
+        "accuracy": 0.463,
+        "latency_ms": 0.31,
+        "tokens": 0,
+        "confidence": 0.621,
+        "staleness": 0.0
+      },
+      "temporal_ordering": {
+        "accuracy": 0.381,
+        "latency_ms": 0.28,
+        "tokens": 0,
+        "confidence": 0.584,
+        "staleness": 0.0
+      }
+    },
+    "sqlite": {
+      "factual_recall": {
+        "accuracy": 0.491,
+        "latency_ms": 0.52,
+        "tokens": 0,
+        "confidence": 0.643,
+        "staleness": 0.0
+      },
+      "temporal_ordering": {
+        "accuracy": 0.356,
+        "latency_ms": 0.47,
+        "tokens": 0,
+        "confidence": 0.601,
+        "staleness": 0.0
+      }
+    }
+  }
+}
