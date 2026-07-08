@@ -5,9 +5,9 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://img.shields.io/badge/tests-255%20passed-00E5A0?logo=pytest)](https://docs.pytest.org/)
-[![Backends](https://img.shields.io/badge/backends-4%20supported-7B61FF)](https://github.com/dakshjain-1616/agent-memory-benchmarker-neo)
+[![Backends](https://img.shields.io/badge/backends-4%20built--in%20%2B%20Tree%20Ring%20optional-7B61FF)](https://github.com/dakshjain-1616/agent-memory-benchmarker-neo)
 
-> Stop guessing which vector store to use — get empirical accuracy, latency, and staleness scores across ChromaDB, FAISS, Mem0, and SQLite in a single command, with no API key required.
+> Stop guessing which vector store to use — get empirical accuracy, latency, and staleness scores across ChromaDB, FAISS, Mem0, SQLite, and optional Tree Ring Memory in a single command.
 
 ---
 
@@ -28,7 +28,7 @@ The benchmarker feeds each **Task Suite** (7 hand-crafted memory scenarios) into
 
 ```
 Task Suites → Backend (add/query) → Scorer → ResultCollector → Reporter
-   7 suites     4 backends           hybrid    SQLite DB         charts + PDF
+   7 suites     4+ backends          hybrid    SQLite DB         charts + PDF
 ```
 
 | Task Suite | What it tests |
@@ -55,6 +55,7 @@ Task Suites → Backend (add/query) → Scorer → ResultCollector → Reporter
 | ChromaDB | 0.463 | 0.381 | 0.412 | 0.334 | 0.398 |
 | FAISS | 0.451 | 0.368 | 0.394 | 0.311 | 0.381 |
 | Mem0 | requires `MEM0_API_KEY` | — | — | — | — |
+| Tree Ring Memory | optional local CLI adapter | set `TREE_RING_BIN` or put `tree-ring` on `PATH` | — | — | — |
 
 *Mock mode uses Jaccard similarity. With real LLM embeddings, scores improve 15–25%.*
 
@@ -133,6 +134,21 @@ Winner: sqlite  (mean accuracy 0.422)
 python3 app.py
 # → http://127.0.0.1:7860
 ```
+
+### Optional: Tree Ring Memory backend
+
+The Tree Ring backend wraps the local `tree-ring` CLI. It is registered only
+when `tree-ring` is on `PATH` or `TREE_RING_BIN` points to a binary, so default
+installs and CI environments without Tree Ring keep the original four backends.
+
+```bash
+TREE_RING_BIN=/path/to/tree-ring \
+  python3 demo.py --mock --backends tree_ring --tasks factual_recall contradiction_detection --no-pdf
+```
+
+The adapter creates an isolated temporary Tree Ring root by default. Set
+`TREE_RING_ROOT` only when you intentionally want to benchmark an existing
+Tree Ring store.
 
 ---
 
@@ -241,6 +257,9 @@ usage: demo.py [-h] [--backends {chromadb,faiss,sqlite,mem0} [...]]
                [--mock] [--no-pdf] [--verbose] [--output-dir DIR]
 ```
 
+When the `tree-ring` CLI is discoverable, `tree_ring` is also accepted as a
+backend choice.
+
 | Flag | Default | Description |
 |---|---|---|
 | `--backends` | all | Space-separated backend names to include |
@@ -314,7 +333,8 @@ agent-memory-benchmarker-neo/
 │   │   ├── chromadb_backend.py    ← ChromaDB with hash embeddings
 │   │   ├── faiss_backend.py       ← FAISS flat-L2 index
 │   │   ├── sqlite_backend.py      ← SQLite FTS5 / BM25
-│   │   └── mem0_backend.py        ← Mem0 cloud platform
+│   │   ├── mem0_backend.py        ← Mem0 cloud platform
+│   │   └── tree_ring_backend.py   ← Optional Tree Ring Memory CLI bridge
 │   └── tasks/
 │       ├── base.py                ← TaskSuite ABC + Memory/Query dataclasses
 │       ├── factual_recall.py      ← 8 discrete facts

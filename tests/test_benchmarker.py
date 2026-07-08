@@ -77,8 +77,11 @@ def collector(tmp_path):
 # ── Backend registry ──────────────────────────────────────────────────────────
 
 class TestBackendRegistry:
-    def test_all_four_backends_registered(self):
-        assert set(BACKEND_REGISTRY.keys()) == {"chromadb", "faiss", "mem0", "sqlite"}
+    def test_bundled_backends_registered(self):
+        assert {"chromadb", "faiss", "mem0", "sqlite"}.issubset(BACKEND_REGISTRY)
+        assert set(BACKEND_REGISTRY).issubset(
+            {"chromadb", "faiss", "mem0", "sqlite", "tree_ring"}
+        )
 
     def test_registry_values_are_classes(self):
         for name, cls in BACKEND_REGISTRY.items():
