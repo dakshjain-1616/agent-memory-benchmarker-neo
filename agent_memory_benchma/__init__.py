@@ -17,6 +17,7 @@ from .backends import (
     FAISSBackend,
     Mem0Backend,
     SQLiteBackend,
+    TreeRingBackend,
     BACKEND_REGISTRY,
 )
 from .tasks import (
@@ -59,6 +60,7 @@ __all__ = [
     "FAISSBackend",
     "Mem0Backend",
     "SQLiteBackend",
+    "TreeRingBackend",
     "BACKEND_REGISTRY",
     # Tasks
     "TaskSuite",

@@ -1,4 +1,4 @@
-"""Tests: all 4 memory backends initialise and respond correctly."""
+"""Tests: bundled memory backends initialise and respond correctly."""
 
 import pytest
 
@@ -39,7 +39,7 @@ def sqlite_backend():
 
 @pytest.fixture(params=["chromadb_backend", "faiss_backend", "mem0_backend", "sqlite_backend"])
 def any_backend(request):
-    """Parametrize over all 4 backends."""
+    """Parametrize over the built-in backends."""
     return request.getfixturevalue(request.param)
 
 
@@ -139,8 +139,7 @@ def test_metadata_accepted_without_error(any_backend):
 
 def test_backend_registry_contains_all():
     from agent_memory_benchma.backends import BACKEND_REGISTRY
-    assert "chromadb" in BACKEND_REGISTRY
-    assert "faiss" in BACKEND_REGISTRY
-    assert "mem0" in BACKEND_REGISTRY
-    assert "sqlite" in BACKEND_REGISTRY
-    assert len(BACKEND_REGISTRY) == 4
+    assert {"chromadb", "faiss", "mem0", "sqlite"}.issubset(BACKEND_REGISTRY)
+    assert set(BACKEND_REGISTRY).issubset(
+        {"chromadb", "faiss", "mem0", "sqlite", "tree_ring"}
+    )
